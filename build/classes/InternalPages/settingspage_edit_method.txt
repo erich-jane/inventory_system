@@ -1,0 +1,5 @@
+    private void manageUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseClicked
+        editProfilePage ep = new editProfilePage(this.currentUserEmail);
+        ep.setLocationRelativeTo(null);
+        ep.setVisible(true);
+    }//GEN-LAST:event_manageUserMouseClicked

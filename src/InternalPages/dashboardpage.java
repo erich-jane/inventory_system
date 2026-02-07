@@ -14,19 +14,27 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class dashboardpage extends javax.swing.JInternalFrame {
 
+    private javax.swing.JDesktopPane parentDesktop;
+
     /**
      * Creates new form dashboardpage
      */
     public dashboardpage() {
+        this(null);
+    }
+    
+    public dashboardpage(javax.swing.JDesktopPane parentDesktop) {
+        this.parentDesktop = parentDesktop;
         initComponents();
+        
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI bi;
         bi = (BasicInternalFrameUI)this.getUI();
         bi.setNorthPane(null);      
     }
     Color navcolor = new Color(255,0,204);
-    Color headcolor = new Color(153,255,255);
-    Color bodycolor = new Color(255,255,255);
+    Color headcolor = new Color(255,0,255);
+    Color bodycolor = new Color(255,153,255);
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -38,28 +46,31 @@ public class dashboardpage extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         manageUser = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        reports = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
         settings = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
 
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(153, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 0, 255));
         jPanel1.setLayout(null);
 
-        jPanel3.setBackground(new java.awt.Color(255, 0, 204));
+        jPanel3.setBackground(new java.awt.Color(255, 153, 255));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-shoes-50.png"))); // NOI18N
+        jPanel3.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 160));
+
         jPanel1.add(jPanel3);
-        jPanel3.setBounds(510, 20, 170, 160);
+        jPanel3.setBounds(540, 20, 170, 160);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
         jLabel1.setText("InventoryManagementSystem");
@@ -73,10 +84,10 @@ public class dashboardpage extends javax.swing.JInternalFrame {
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 780, 210));
 
-        jPanel2.setBackground(new java.awt.Color(153, 255, 153));
+        jPanel2.setBackground(new java.awt.Color(255, 153, 255));
         jPanel2.setLayout(null);
 
-        manageUser.setBackground(new java.awt.Color(153, 255, 255));
+        manageUser.setBackground(new java.awt.Color(255, 0, 255));
         manageUser.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageUserMouseEntered(evt);
@@ -84,45 +95,25 @@ public class dashboardpage extends javax.swing.JInternalFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 manageUserMouseExited(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                manageUserMouseClicked(evt);
+            }
         });
         manageUser.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("MANAGE USER");
+        jLabel2.setText("ALL STOCKS");
         manageUser.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 170, 40));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/manager_user100.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/icons8-stocks-50.png"))); // NOI18N
         manageUser.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 160));
 
         jPanel2.add(manageUser);
-        manageUser.setBounds(70, 30, 170, 160);
+        manageUser.setBounds(180, 30, 170, 160);
 
-        reports.setBackground(new java.awt.Color(153, 255, 255));
-        reports.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                reportsMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                reportsMouseExited(evt);
-            }
-        });
-        reports.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\canaz\\OneDrive\\Desktop\\report_100.png")); // NOI18N
-        reports.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 160));
-
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("REPORTS");
-        reports.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 170, 30));
-
-        jPanel2.add(reports);
-        reports.setBounds(300, 30, 170, 160);
-
-        settings.setBackground(new java.awt.Color(153, 255, 255));
+        settings.setBackground(new java.awt.Color(255, 0, 255));
         settings.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 settingsMouseEntered(evt);
@@ -130,20 +121,23 @@ public class dashboardpage extends javax.swing.JInternalFrame {
             public void mouseExited(java.awt.event.MouseEvent evt) {
                 settingsMouseExited(evt);
             }
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingsMouseClicked(evt);
+            }
         });
         settings.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\canaz\\OneDrive\\Desktop\\settings_100.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/iconFolder/logout.png"))); // NOI18N
         settings.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 170, 160));
 
         jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("SETTINGS");
+        jLabel8.setText("RETURN");
         settings.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 170, 40));
 
         jPanel2.add(settings);
-        settings.setBounds(540, 30, 170, 160);
+        settings.setBounds(420, 30, 170, 160);
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 780, 230));
 
@@ -158,14 +152,6 @@ public class dashboardpage extends javax.swing.JInternalFrame {
         manageUser.setBackground(headcolor);
     }//GEN-LAST:event_manageUserMouseExited
 
-    private void reportsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseEntered
-        reports.setBackground(navcolor);
-    }//GEN-LAST:event_reportsMouseEntered
-
-    private void reportsMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseExited
-        reports.setBackground(headcolor);
-    }//GEN-LAST:event_reportsMouseExited
-
     private void settingsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseEntered
         settings.setBackground(navcolor);
     }//GEN-LAST:event_settingsMouseEntered
@@ -174,21 +160,70 @@ public class dashboardpage extends javax.swing.JInternalFrame {
         settings.setBackground(headcolor);
     }//GEN-LAST:event_settingsMouseExited
 
+    private void manageUserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageUserMouseClicked
+        // open Products page as internal frame
+        productsPage pp = new productsPage(parentDesktop);
+        if(parentDesktop != null) {
+            parentDesktop.add(pp);
+            pp.setVisible(true);
+        } else {
+            pp.setLocationRelativeTo(null);
+            pp.setVisible(true);
+        }
+    }//GEN-LAST:event_manageUserMouseClicked
+
+    private void reportsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reportsMouseClicked
+        reports r = new reports(); r.setLocationRelativeTo(null); r.setVisible(true);
+    }//GEN-LAST:event_reportsMouseClicked
+
+    private void settingsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingsMouseClicked
+        // Close this dashboardpage and go back to home
+        this.dispose();
+    }//GEN-LAST:event_settingsMouseClicked
+
+    private void addDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addDataMouseEntered
+        addData.setBackground(navcolor);
+    }//GEN-LAST:event_addDataMouseEntered
+
+    private void addDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addDataMouseExited
+        addData.setBackground(headcolor);
+    }//GEN-LAST:event_addDataMouseExited
+
+    private void addDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addDataMouseClicked
+        addItem();
+    }//GEN-LAST:event_addDataMouseClicked
+
+    private void addItem(){
+        try{
+            String name = javax.swing.JOptionPane.showInputDialog(this, "Item name:"); if(name==null || name.trim().isEmpty()) return;
+            String qtyS = javax.swing.JOptionPane.showInputDialog(this, "Quantity:"); if(qtyS==null) return; int qty = Integer.parseInt(qtyS.trim());
+            String priceS = javax.swing.JOptionPane.showInputDialog(this, "Price (₱):"); if(priceS==null) return; priceS = priceS.replaceAll("[^0-9.\\-]", ""); double price = Double.parseDouble(priceS.trim());
+            java.io.File dir = new java.io.File("db"); if(!dir.exists()) dir.mkdirs();
+            java.io.File f = new java.io.File(dir, "items.csv");
+            if(!f.exists()){
+                try(java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter(f,true))){ bw.write("1,Sample Item A,10,9.99"); bw.newLine(); bw.write("2,Sample Item B,5,19.99"); bw.newLine(); }
+            }
+            // find max id
+            int maxId=0; try(java.io.BufferedReader br = new java.io.BufferedReader(new java.io.FileReader(f))){ String line; while((line=br.readLine())!=null){ String[] p=line.split(","); if(p.length>0){ try{ maxId = Math.max(maxId, Integer.parseInt(p[0].trim())); }catch(NumberFormatException ex){} } } }
+            int id = maxId+1; String date = java.time.LocalDate.now().toString();
+            try(java.io.BufferedWriter bw = new java.io.BufferedWriter(new java.io.FileWriter(f,true))){ bw.write(id+","+name.trim()+","+qty+","+price+","+date); bw.newLine(); }
+            javax.swing.JOptionPane.showMessageDialog(this, "Item added.");
+        }catch(Exception e){ javax.swing.JOptionPane.showMessageDialog(this, "Invalid input: "+e.getMessage()); }
+    }
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel manageUser;
-    private javax.swing.JPanel reports;
     private javax.swing.JPanel settings;
     // End of variables declaration//GEN-END:variables
 }
